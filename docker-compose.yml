@@ -3,6 +3,7 @@ services:
 
   example-node-app:
     build: .
+    image: maaksuw/example-node-app
     ports:
       - 8081:8080
     container_name: example-node-app
