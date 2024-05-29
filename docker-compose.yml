@@ -1,0 +1,17 @@
+
+services:
+
+  example-node-app:
+    build: .
+    ports:
+      - 8081:8080
+    container_name: example-node-app
+
+
+  watchtower:
+    image: containrrr/watchtower
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
